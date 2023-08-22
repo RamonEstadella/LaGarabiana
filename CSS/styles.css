@@ -1,0 +1,585 @@
+@font-face {
+    font-family: 'Merienda';
+    src: url('../fonts/Merienda/Merienda-VariableFont_wght.ttf');
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins/Poppins-Regular.ttf');
+}
+
+:root {
+    /* Spacings */
+    --spacing-4: .25rem;
+    --spacing-8: .5rem;
+    --spacing-12: .75rem;
+    --spacing-16: 1rem;
+    --spacing-24: 1.5rem;
+    --spacing-32: 2rem;
+    --spacing-64: 4rem;
+
+    /* Colors */
+    --color-white:         #ffffff;
+    --color-black:         #000;
+    --color-orange:        #e18734; 
+    --color-oragne-light:  #d89f69;
+
+    /* Fonts */
+
+    --font-family-titles: 'Merienda';
+    --font-family-text: 'Poppins';
+
+
+    --font-weight-bold: 700;
+    --font-weight-normal: 400;
+
+    --font-h1:          var(--font-weight-bold)     1.8rem/1.5 var(--font-family);
+    --font-h2:          var(--font-weight-bold)     1.5rem/1.5 var(--font-family);
+    --font-h3:          var(--font-weight-bold)     1.2rem/1.5 var(--font-family);
+    --font-body:        var(--font-weight-normal)   1rem/1.5 var(--font-family);
+    --font-body-small:  var(--font-weight-normal)   .85rem/1.5 var(--font-family);
+
+    /* Zindex */
+    --zindex-header: 100;
+
+    /* Sizings */
+    --max-width-desktop: 50rem;
+
+    /* Elevations */
+    --elevation-1: 0rem .75rem 1.25rem -1.5rem var(--color-black-opacity-50);
+
+    /* Breakpoints */
+    /* Los breakpoints no se pueden usar como custom properties variables */
+    /* break-small:       30rem; */
+    /* break-medium:      48rem; */
+    /* break-large:       62rem; */
+    /* break-extra-large: 75rem; */
+}
+
+/* Custom Reset */
+
+* {
+    color: var(--color-black);
+    font: var(--font-body);
+}
+
+/* BTN EFFECTS*/
+
+.btn:hover {
+    background-color: #c56306;
+}
+
+/*HEADER NAV RESPONSIVE*/
+
+.header {
+    width: 100%;
+}
+
+.mark {
+    color: var(--color-orange) !important;
+    font-weight: bold;
+}
+
+.header__container {
+    background-color: var(--color-black);
+}
+
+.nav {
+    width: 100%;
+    height: 60px;
+    background-color: var(--color-black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+}
+
+.nav__img {
+    margin-right: var(--spacing-24);
+}
+
+.nav > .nav-header {
+    flex: 0.95;
+    
+}
+.nav > .nav-header > .nav-title {
+    font-size: 22px;
+    color: #fff;
+}
+.nav > .nav-list {
+    display: flex;
+    gap: 2rem;
+}
+.nav > .nav-list > li {
+    list-style-type: none;
+}
+.nav > .nav-list > li a {
+    text-decoration: none;
+    color: #efefef;
+    cursor: pointer;
+    text-align: center;
+}
+.nav > #nav-check {
+    display: none;
+}
+
+.nav-list > li > .nav__link:hover {
+    color: var(--color-orange);
+    font-weight: bold;
+}
+
+@media (max-width: 479px) {
+    .nav {
+    padding: 1rem;
+    }
+    
+    .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 30px;
+    top: 5px;
+    padding-top: 0.2rem;
+    }
+    .nav > .nav-btn > label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+    }
+    .nav > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid var(--color-white);
+    }
+    .nav > .nav-list {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    background-color: var(--color-black);
+    height: 0;
+    transition: all 0.3s ease-in;
+    top: 60px;
+    left: 0;
+    overflow: hidden;
+    }
+    .nav > .nav-list > li {
+    width: 100%;
+    margin-top: 1.5rem;
+    }
+    .nav > #nav-check:checked ~ .nav-list {
+    height: calc(100vh - 50px);
+    }
+    .nav__link:hover {
+        color: var(--color-orange);
+    }
+}
+
+.header {
+    width: 100%;
+    height: 460px;
+    background-image: url(../img/sunset-field.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+
+.header__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: var(--spacing-64);
+}
+
+.header__img {
+    width: 80px;
+    margin-bottom: var(--spacing-32);
+}
+
+.header__h1 {
+    font-family: var(--font-family-titles);
+    font-size: 40px;
+    color: var(--color-white);
+}
+
+@media (min-width: 479px) {
+    .header__h1 {
+        font-size: 80px;
+    }
+}
+
+.header__p {
+    font-size: 1.3rem;
+    color: var(--color-white);
+    letter-spacing: var(--spacing-4);
+}
+
+
+/* QUI SOM ?*/
+
+.qui-som {
+    background-color: var(--color-black);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--spacing-64);
+}
+
+.qui-som__article {
+    display: flex;
+    flex-direction: column;
+}
+
+
+@media (min-width: 479px) {
+    .qui-som__article {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        max-width: 900px;
+        margin: auto;
+    }
+}
+
+.qui-som__container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    max-width: 250px;
+    margin: auto;
+}
+
+@media (min-width: 479px) {
+    .qui-som__container {
+        max-width: 800px;
+        margin: auto;
+    }
+}
+
+.qui-som__h2 {
+    color: var(--color-white);
+    font-family: var(--font-family-titles);
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: var(--spacing-64);
+    margin-bottom: var(--spacing-32);
+}
+
+.qui-som__h3 {
+    color: var(--color-orange);
+    font-weight: bold;
+    margin-bottom: var(--spacing-12);
+}
+
+.qui-som__p {
+    color: var(--color-white);
+    font-size: 15px;
+    margin-bottom: var(--spacing-24);
+    padding: var(--spacing-24);
+}
+
+.btn-llegir {
+    width: 90px;
+    height: 40px;
+    margin: auto;
+    margin-bottom: var(--spacing-32);
+    border-radius: 50px;
+    background-color: #e18734;
+    color: var(--color-black);
+    font-size: 10px;
+    font-weight: bold;
+}
+
+/* CISTELLES */
+
+.cistelles {
+    background-image: url(../img/annie-spratt-SVR0YpsHH-8-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 310px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    max-width: 900px;
+    margin: auto;
+    margin-bottom: var(--spacing-64);
+    border-radius: 5px;
+}
+
+.cistelles::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 310px;
+    background: var(--color-black);
+    opacity: 0.5;
+    z-index: 100;
+}
+
+.cistelles:hover {
+    opacity: 0.7;
+}
+
+.cistelles__container {
+    text-align: center;
+    max-width: 200px;
+    margin: auto;
+    z-index: 400;
+}
+
+@media (min-width: 479px) {
+    .cistelles__container{
+        text-align: center;
+        max-width: 800px;
+        margin: auto;
+    }
+}
+
+.cistelles__h2 {
+    font-family: var(--font-family-titles);
+    font-size: 1.5rem;
+    color: var(--color-white);
+    z-index: 300;
+    margin-bottom: var(--spacing-32);
+}
+
+.cistelles__p {
+    font-family: var(--font-family-text);
+    color: var(--color-white);
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 300;
+    margin-bottom: var(--spacing-16);
+}
+
+@media (min-width: 479px) {
+    .cistelles__p{
+        font-size: 20px;
+    }
+}
+
+.personalitza {
+    margin-bottom: var(--spacing-24);
+}
+
+.btn-personalitza {
+    width: 110px;
+    height: 40px;
+    margin: auto;
+    margin-bottom: var(--spacing-12);
+    border-radius: 50px;
+    background-color: #e18734;
+    color: var(--color-black);
+    font-size: 10px;
+    font-weight: bold;
+}
+
+
+/* PRODUCTES */
+
+.productes {
+    position: relative;
+    background-color: var(--color-black);
+    padding-top: var(--spacing-32);
+    padding-bottom: var(--spacing-64);
+}
+
+@media (min-width: 479px) {
+    .productes {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 479px) {
+    .productes__container {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        max-width: 800px;
+        margin: auto;
+    }
+}
+
+@media (min-width: 768px) {
+    .productes__container {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        max-width: 1000px;
+        margin: auto;
+    }
+}
+
+.productes__h2 {
+    color: var(--color-white);
+    font-family: var(--font-family-titles);
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: var(--spacing-24);
+    margin-bottom: var(--spacing-24);
+}
+
+.card {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    max-width: 250px;
+    margin: auto;
+    z-index: -2;
+}
+
+@media (min-width: 1024px) {
+    .card {
+        max-width: 900px;
+        width: 300px;
+        height: 300px;
+    }
+}
+
+.card:hover {
+    opacity: 0.9;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+.productes__h3 {
+    position: absolute;
+    top: calc(50% - 12px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--color-white);
+    font-family: var(--font-family-text);
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    z-index: 2;
+    
+}
+
+.btn-productes {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90px;
+    height: 40px;
+    margin: auto;
+    border-radius: 50px;
+    background-color: #e18734;
+    color: var(--color-black);
+    font-size: 10px;
+    font-weight: bold;
+    margin-top: var(--spacing-64);
+    z-index: 2;
+}
+
+@media (min-width: 1024px) {
+    .btn-productes {
+        max-width: 900px;
+        margin-top: 0px;
+        bottom: 10%;
+    }
+}
+
+.productes__fruites {
+    background-image: url(../img/vegetables.jpg);
+    background-position: center;
+    background-size: cover;
+    margin-bottom: var(--spacing-24);
+    z-index: 2;
+}
+
+.productes__fleca {
+    background-image: url(../img/bread.jpg);
+    background-position: center;
+    background-size: cover;
+    margin-bottom: var(--spacing-24);
+    z-index: 2;
+}
+
+.productes__farina {
+    background-image: url(../img/flour.jpg);
+    background-position: center;
+    background-size: cover;
+    margin-bottom: var(--spacing-24);
+    z-index: 2;
+}
+
+/* FOOTER */
+
+.footer {
+    position: relative;
+    background-image: url(../img/isak-engstrom-rgYkWfIaWHs-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-32);
+    z-index: -2;
+}
+
+@media (min-width: 479px) {
+    .footer__info {
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+        max-width: 800px;
+        margin: auto;
+    }
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Color oscuro con opacidad (aqui 0.5 significa 50% de opacidad) */
+    z-index: -1;
+}
+
+.footer__h2 {
+    color: var(--color-white);
+    font-family: var(--font-family-titles);
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: var(--spacing-24);
+    margin-bottom: var(--spacing-24);
+    z-index: 300;
+}
+
+.footer__h3 {
+    color: var(--color-white);
+    font-family: var(--font-family-text);
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: var(--spacing-8);
+    margin-bottom: var(--spacing-12);
+    z-index: 400;
+}
+
+.footer__li {
+    color: var(--color-white);
+    font-family: var(--font-family-text);
+    font-size: 1rem;
+    z-index: 500;
+}
